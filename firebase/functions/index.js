@@ -43,7 +43,7 @@ exports.format_display = functions.database.ref('/currency')
       const settings = snapshot.val();
       const updated_on = moment.unix(timestamp)
         .tz('America/Sao_Paulo')
-        .format('HH:mm');
+        .format('DD-MM-YYYY HH:mm:ss');
 
       return event.data.ref.parent.child('display').set({
         transfer: (currency * settings.transfer).toFixed(2),
